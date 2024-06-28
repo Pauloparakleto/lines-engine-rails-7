@@ -1,7 +1,7 @@
 module AuthMacros
 
   def log_in(attributes = {})
-    @_current_lines_user = FactoryGirl.create(:user, attributes)
+    @_current_lines_user = FactoryBot.create(:user, attributes)
     visit lines.login_path
     fill_in "email", with: @_current_lines_user.email
     fill_in "password", with: @_current_lines_user.password
@@ -10,7 +10,7 @@ module AuthMacros
   end
 
   def authorize(attributes = {})
-    @current_lines_user = FactoryGirl.create(:user, attributes)
+    @current_lines_user = FactoryBot.create(:user, attributes)
     controller.stub(:current_lines_user).and_return(@current_lines_user)
     controller.stub(:authorize).and_return(true)
   end

@@ -28,7 +28,9 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'
-  gem 'factory_girl_rails', require: false
+  gem 'pg'
+  gem 'factory_bot_rails', require: false
+  gem 'rake', '< 11.0'
   gem 'railroady'
   gem 'thor'
 end
