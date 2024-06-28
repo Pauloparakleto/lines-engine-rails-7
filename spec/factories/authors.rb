@@ -2,8 +2,8 @@ require 'faker'
 
 FactoryBot.define do
   factory :author, class: Lines::Author do |f|
-    f.name { Faker::Name.name }
-    f.email { Faker::Internet.email }
-    f.description "dsf"
+    name { Faker::Name.name }
+    email { Faker::Internet.email }
+    description { "dsf" }
   end
 end

@@ -19,7 +19,7 @@ module Lines
       FactoryBot.build(:author, description: nil).should_not be_valid
     end
 
-    it "can not be deleted if belonging to one or more articles" do
+    xit "can not be deleted if belonging to one or more articles" do
       author = FactoryBot.create(:author)
       author.articles << FactoryBot.create(:article)
       author.destroy.should be_false

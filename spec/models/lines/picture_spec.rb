@@ -8,7 +8,7 @@ module Lines
     end
 
     it "should trigger :update_used_images after save" do
-      pic = FactoryGirl.create(:picture)
+      pic = FactoryBot.create(:picture)
       article = FactoryBot.create(:article, content: "![Alt text](#{pic.image.url})")
       article.should_receive(:update_used_images)
       article.save
