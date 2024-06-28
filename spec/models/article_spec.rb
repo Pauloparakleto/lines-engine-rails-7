@@ -4,15 +4,15 @@ module Lines
 
   describe Article do
     it "has a valid factory" do
-      FactoryGirl.create(:article).should be_valid
+      FactoryBot.create(:article).should be_valid
     end
 
     it "is invalid without a title" do
-      FactoryGirl.build(:article, title: nil).should_not be_valid
+      FactoryBot.build(:article, title: nil).should_not be_valid
     end
 
     it "is invalid without content" do
-      FactoryGirl.build(:article, content: nil).should_not be_valid
+      FactoryBot.build(:article, content: nil).should_not be_valid
     end
 
     # it "is invalid with neither hero_image nor short_hero_image " do
@@ -24,15 +24,13 @@ module Lines
     # end
 
     it "is invalid without one or more authors" do
-      FactoryGirl.build(:article, author_ids: nil).should_not be_valid
+      FactoryBot.build(:article, author_ids: nil).should_not be_valid
     end
 
     it "is valid with tags" do
-      a = FactoryGirl.create(:article_with_tags)
+      a = FactoryBot.create(:article_with_tags)
       a.should be_valid
       a.tag_list.should == ['tag1', 'tag2']
     end
-
   end
-
 end

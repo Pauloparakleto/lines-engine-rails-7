@@ -44,9 +44,10 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'sprockets-rails', '< 4'
   s.add_runtime_dependency 'rails', ['>= 3', '< 6']
 
-  s.add_development_dependency 'mysql2'
+  s.add_development_dependency 'pg'
   s.add_development_dependency 'rspec-rails', '~> 2.14.2', '< 3'
   s.add_development_dependency 'rspec', '~> 2.14.1', '< 3'
+  s.add_development_dependency 'factory_bot', '6.4.4'
 
   s.files         = `git ls-files`.split("\n").select{ |file_name| !(file_name =~ /^spec/) }
   s.test_files    = `git ls-files`.split("\n").select{ |file_name| (file_name =~ /^spec/) }
